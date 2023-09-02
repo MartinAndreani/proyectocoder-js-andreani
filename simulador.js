@@ -100,7 +100,7 @@ function cargarCanciones(cantCancion){
 }
 
 function promedio(cantRep,contador){
-    prom = Math.floor(cantRep / contador) 
+    prom = Math.floor(cantRep / contador)
 }
 
 
