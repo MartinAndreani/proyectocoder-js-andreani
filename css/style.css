@@ -1,0 +1,206 @@
+body{
+    
+    background: rgb(8,8,9);
+    background: linear-gradient(0deg, rgba(8,8,9,1) 0%, rgba(45,142,253,1) 100%);
+}
+
+h3{
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    box-shadow: 30px 3px 60px rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.393);
+}
+p{
+    color: wheat;
+    font-size: 17px;
+}
+#logo{
+    width: 22vh;
+    height: 25vh;
+}
+
+#grooveTitulo{
+    color:wheat ;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    
+}
+#grooveTitulo:hover{
+    text-shadow:  5px 5px 30px ;
+}
+
+
+#playlistTitulo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color:wheat ;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    
+}
+
+
+
+.columnas{
+    font-size: 23px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: rgb(33, 123, 225);
+}
+.modal-header{
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.encabezado-modal{
+    position: relative;
+    top: 8px;
+}
+
+
+.filas-modal{
+    height: 50px;
+    overflow:hidden
+}
+.imagen-modal{
+    height: 45px;
+    width: 45px;
+}
+
+.titulos-modal{
+    position: relative;
+    left: 35px;
+    bottom: 5px;
+    width:  130px;
+    
+}
+.titulo-modal{
+    margin: 0;
+}
+.artista-modal{
+    position: relative;
+    bottom: 10px;
+    text-overflow: ellipsis;
+
+}
+
+
+.id{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 65px;
+}
+
+.filas{
+    height: 65px;
+    margin-bottom:5px;
+    border-radius: 8px;
+}
+
+.filas:hover{
+    background-color:#5b3bd128;
+
+}
+
+.titulos{
+    width: 70vh;
+}
+.albumes{
+    width: 27vh;
+    
+}
+.albumes-ar{
+    width: 35vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 6px;
+}
+
+#titulo{
+    position: relative;
+    top: 5px;
+    margin: 0;
+    
+}
+#artista{position: relative;
+    bottom: 15px;
+    margin: 0;
+    
+}
+
+.duracion{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left:25px ;
+    
+    margin: 0;
+}
+
+
+
+.nombres{
+    position: relative;
+    left: 50px;
+    bottom: 0px;
+    margin: 0;
+    width:40vh;
+}
+.reproduccion{
+    width: 42vh
+}
+
+.reproducciones{
+    position: relative;
+    top: 10px;
+}
+
+button{
+    border: none;
+    background: transparent;
+}
+
+
+img{
+    height: 53px;
+    width: 53px;
+    border-radius: 8px;
+}
+.agregadas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.agregadas-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 8px;
+}
+

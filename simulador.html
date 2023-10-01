@@ -3,14 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Simulador Playlist</title>
 </head>
 <body>
-    <!-- <h1>Primer Pre-Entrega Proyecto Coderhouse JS</h1> -->
-    <h1>Segunda Pre-Entrega Proyecto Coderhouse JS</h1>
-    <h2>Simulador Musica</h2>
-    <script src="simulador.js"></script>
     
+    <nav class="navbar navbar-expand-lg ">
+        <div class= "container-fluid">
+            <img src="./assets/download-removebg-preview.png" alt="" id="logo">
+            <h1 id="grooveTitulo">Groove Music</h1>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mx-1">
+        
+                <form class="d-flex mx-3" role="search">
+                    <input id="buscador"  class="form-control me-2" type="search" placeholder="Buscar Cancion" aria-label="Search">
+                </form>
+            
+            
+        
+                <button id="agregarCancionBtnModal" data-bs-toggle="modal" data-bs-target="#idModalCancion" class="btn btn-success">Agregar Cancion</button>
+            
+        
+                <button id="filaBtn" data-bs-toggle="modal" data-bs-target="#idModalFila" class="btn btn-danger mx-3">
+                    Fila de Reproduccion
+                </button>
+            
+          </ul>
+          </div>   
+        </div>
+      </nav>
+
+
+    <main>
+        <div class="container-fluid">
+
+            <div class="col-sm-12 col-md-12 p-3 ">
+                <div class="row g-2 ">
+                    <h2 id="playlistTitulo">Playlist</h2>
+                    <div id="coincideDiv"></div>
+
+                    
+                    <div class="row encabezado ">
+                        <div class="col-1 columnas id">#</div>
+                        <div class="col-3 columnas  titulos ">
+                            <button id="OrdenarAlfBtn">Titulo</button>
+                        </div>
+                        <div class="col-3 columnas albumes ">
+                            <button id="OrdenarAlfBtnAlbum">
+                                Album
+                            </button>
+                        </div>
+                        <div  class="col-2 columnas duracion">
+                            <button id="mayDurBtn">
+                                Duracion
+                            </button>
+                            </div>
+                        <div  class="col-2 columnas reproduccion ">
+                            <button id="mayRepBtn">
+                                Reproducciones
+                            </button>
+                        </div>
+                        <div class="col-1 columnas agregadas">❤</div>
+                    </div>
+                    <hr>
+                    <div class="row g5" id="canciones">
+                
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </main>
+
+
+    <footer>
+        
+            <img src="./assets/download-removebg-preview.png" alt="" >
+
+    </footer>
+    
+
+    <!-- MODAL AGREGAR CANCION -->
+    <div class="modal fade" id="idModalCancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar Cancion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <div>
+                <label for="titulo" class="form-label">Titulo</label>
+                <input type="text" name="" class="form-control" id="inputTitulo">
+            </div>
+    
+            <div>
+                <label for="album" class="form-label">Album</label>
+                <input type="text" name="" class="form-control" id="inputAlbum">
+            </div>
+
+            <div>
+                <label for="artista" class="form-label">Artista</label>
+                <input type="text" name="" class="form-control" id="inputArtista">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="text" id="botonAgregar" class="btn btn-success" data-bs-dismiss="modal">Agregar Cancion</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+
+
+    <!-- MODAL FILA REPRODUCCION -->
+
+    <div class="modal fade" id="idModalFila" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Fila de Reproduccion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row g-2">
+                <div class="row encabezado-modal ">
+                    <div class="col-4 ">
+                        Titulo
+                    </div>
+                    <div class="col-3 ">
+                            Album
+                    </div>
+                    <div  class="col-3 ">
+                            Duracion
+                    </div>
+                    <div class="col-2 ">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="modal-body "id="modalBodyFila" >
+                
+                    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+      
+    
+
+    <!-- <script src="simulador.js"></script> -->
+    <script src="simuladorDOM.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>
