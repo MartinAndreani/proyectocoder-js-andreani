@@ -5,7 +5,7 @@
         "album":"Bocanada",
         "artista":"Gustavo Cerati",
         "duracion": 4.06,
-        "reproducciones":1800000,
+        "reproducciones":180000,
         "imagen":"bocanada.webp"
 
     },
@@ -59,4 +59,6 @@
         "imagen":"clicsmodernos.jfif"
 
     }
+    
+
 ]
