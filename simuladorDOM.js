@@ -15,16 +15,22 @@ class Cancion{
     }
     
 }
-// INSTANCIAR OBJETO
-const cancion1 = new Cancion(1,"Bocanada","Bocanada","Gustavo Cerati", (Math.random()*5).toFixed(2) , (Math.random()*10000000000).toFixed(0),'bocanada.webp')
-const cancion2 = new Cancion(2,"Bajan","Artaud","Luis A. Spinetta", (Math.random()*5).toFixed(2) , (Math.random()*10000000000).toFixed(0),'artaud.webp')
-const cancion3 = new Cancion(3,"Boredom","Flowerboy", "Tyler, the Creator",(Math.random()*5).toFixed(2),(Math.random()*10000000000).toFixed(0),'tyler.webp')
-const cancion4 = new Cancion(4,"Calma","Tripolar","Usted Señalemelo",(Math.random()*5).toFixed(2),(Math.random()*10000000000).toFixed(0),'tripolar.webp')
-const cancion5 = new Cancion(5,"Veni Mira","Nafta","Nafta",(Math.random()*5).toFixed(2),(Math.random()*10000000000).toFixed(0),'nafta.jpeg')
-const cancion6 = new Cancion(6,"Dos Cereo Uno","Clics Modernos","Charly Garcia",(Math.random()*5).toFixed(2),(Math.random()*10000000000).toFixed(0),'clicsmodernos.jfif')
+
+
+
+
+const cargarCanciones = async () => {
+    const resp = await fetch("canciones.json")
+    const dataCanc = await resp.json()
+    for (let canc of dataCanc){
+        let nuevaCancion = new Cancion(canc.id,canc.titulo, canc.album,canc.artista,canc.duracion,canc.reproducciones,canc.imagen)
+        playlist.push(nuevaCancion)
+    }
+    localStorage.setItem("playlist", JSON.stringify(playlist))
+    mostrarPlaylistDOM(playlist)
+}
+
 const playlist = []
-
-
 
 if(localStorage.getItem("playlist")){
     for(let canc of JSON.parse(localStorage.getItem("playlist"))){
@@ -32,10 +38,10 @@ if(localStorage.getItem("playlist")){
         playlist.push(cancionStorage)
     }
 }else{
-    console.log("seteamos por primera vez");
-    playlist.push(cancion1,cancion2,cancion3,cancion4,cancion5,cancion6)
-    localStorage.setItem("playlist", JSON.stringify(playlist))
+    console.log("primer seteo");
+    cargarCanciones()
 }
+
 
 
 
@@ -65,6 +71,7 @@ let cancionFila = JSON.parse(localStorage.getItem("fila")) ?? []
 // FUNCIONES
 
 function mostrarPlaylistDOM(array){
+    console.log(array);
     canciones.innerHTML = ""
     for(let canc of array){
         
@@ -243,6 +250,29 @@ function agregarEnFila(elem){
         cancionFila.push(elem)
         localStorage.setItem("fila", JSON.stringify(cancionFila))
         console.log(cancionFila);
+        Toastify({
+            text:`Se agrego a fila de reproduccion `,
+            duration:2500,
+            gravity:"bottom",
+            position:"center",
+            style:{ 
+                background:"linear-gradient(to right,  #00b09b, #00f1ff)",
+                color: "black"
+            }
+        }).showToast()
+    }else{
+        Toastify({
+            text:`Ya existe en la fila de reproduccion`,
+            duration:2500,
+            gravity:"bottom",
+            position:"center",
+            style:{ 
+                background:"linear-gradient(to right,  #00b09b, #00f1ff)",
+                color: "black",
+                
+            }
+        }).showToast()
+
     }
 }
 
@@ -293,6 +323,18 @@ function CargarEnFila(array){
                 let posicion = array.indexOf(cancionFila)
                 array.splice(posicion, 1)
                 localStorage.setItem("fila", JSON.stringify(array))
+                
+                Toastify({
+                        text:`Eliminada de la Fila` ,
+                        duration:2500,
+                        gravity:"bottom",
+                        position:"center",
+                        style:{ 
+                            background:"linear-gradient(to right,  #00b09b, #00f1ff)",
+                            color: "black",
+                            
+                        }
+                    }).showToast()
             })
 
         }
@@ -302,8 +344,7 @@ function CargarEnFila(array){
 
 
 
-// EVENTOS
-function cargarCanciones(array){
+function agregarCanciones(array){
         let titulo = document.getElementById("inputTitulo")
         let album = document.getElementById("inputAlbum")
         let artista = document.getElementById("inputArtista")
@@ -319,10 +360,26 @@ function cargarCanciones(array){
         artista.value = ""
         
         localStorage.setItem("playlist", JSON.stringify(playlist))
+        
+        Toastify({
+            text:`${nuevaCancion.titulo} fue agregada a la Playlist`,
+            duration:2500,
+            gravity:"bottom",
+            position:"center",
+            style:{ 
+            background:"linear-gradient(to right,  #00b09b, #00f1ff)",
+            color: "black",
+                    
+                }
+            }).showToast()
 }
 
-    botonAgregar.addEventListener("click", ()=> {
-        cargarCanciones(playlist)
+
+// EVENTOS
+
+
+botonAgregar.addEventListener("click", ()=> {
+        agregarCanciones(playlist)
         mostrarPlaylistDOM(playlist)
 })
 
@@ -442,4 +499,6 @@ filaBtn.addEventListener("click",()=>{
 // CODIGO
 
 mostrarPlaylistDOM(playlist)
+
+
 
