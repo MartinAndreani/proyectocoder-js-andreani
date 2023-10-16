@@ -1,0 +1,62 @@
+[
+    {
+        "id":1,
+        "titulo":"Bocanada",
+        "album":"Bocanada",
+        "artista":"Gustavo Cerati",
+        "duracion": 4.06,
+        "reproducciones":1800000,
+        "imagen":"bocanada.webp"
+
+    },
+    {
+        "id":2,
+        "titulo":"Bajan",
+        "album":"Artaud",
+        "artista":"Luis A. Spinetta",
+        "duracion":3.24,
+        "reproducciones":200000,
+        "imagen":"artaud.webp"
+
+    },
+    {
+        "id":3,
+        "titulo":"Boredom",
+        "album":"Flowerboy",
+        "artista":"Tyler, the Creator",
+        "duracion":"5.20",
+        "reproducciones":600000,
+        "imagen":"tyler.webp"
+
+    },
+    {
+        "id":4,
+        "titulo":"Calma",
+        "album":"Tripolar",
+        "artista":"Usted Señalemelo",
+        "duracion":4.29,
+        "reproducciones":12000,
+        "imagen":"tripolar.webp"
+
+    },
+    {
+        "id":5,
+        "titulo":"Veni Mira",
+        "album":"Nafta",
+        "artista":"Nafta",
+        "duracion":5.04,
+        "reproducciones":80000,
+        "imagen":"nafta.jpeg"
+
+    },
+    {
+        "id":6,
+        "titulo":"Dos Cero Uno",
+        "album":"Clics Modernos",
+        "artista":"Charly Garcia",
+        "duracion":2.08,
+        "reproducciones":130000,
+        "imagen":"clicsmodernos.jfif"
+
+    }
+]
