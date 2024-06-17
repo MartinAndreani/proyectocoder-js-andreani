@@ -1,5 +1,3 @@
-
-
 // CREAR CLASE
 class Cancion{
     constructor(id,titulo,album,artista,duracion,reproducciones,imagen){
@@ -34,15 +32,15 @@ const cargarCanciones = async () => {
 
 const playlist = []
 
-// if(localStorage.getItem("playlist")){
-//     for(let canc of JSON.parse(localStorage.getItem("playlist"))){
-//         let cancionStorage = new Cancion(canc.id,canc.titulo,canc.album,canc.artista,canc.duracion,canc.reproducciones,canc.imagen)
-//         playlist.push(cancionStorage)
-//     }
-// }else{
-//     console.log("primer seteo");
-//     cargarCanciones()
-// }
+if(localStorage.getItem("playlist")){
+    for(let canc of JSON.parse(localStorage.getItem("playlist"))){
+        let cancionStorage = new Cancion(canc.id,canc.titulo,canc.album,canc.artista,canc.duracion,canc.reproducciones,canc.imagen)
+        playlist.push(cancionStorage)
+    }
+}else{
+    console.log("primer seteo");
+    cargarCanciones()
+}
 
 
 
