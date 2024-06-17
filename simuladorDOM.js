@@ -30,6 +30,8 @@ const cargarCanciones = async () => {
     mostrarPlaylistDOM(playlist)
 }
 
+
+
 const playlist = []
 
 if(localStorage.getItem("playlist")){
